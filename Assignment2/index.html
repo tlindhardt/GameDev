@@ -1,0 +1,104 @@
+<!DOCTYPE>
+<html>
+<head>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/init.js"></script>
+	<script type="text/javascript" src="js/draw.js"></script>
+	<script type="text/javascript" src="js/update.js"></script>
+	<script type="text/javascript" src="js/input.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body> 
+	<div id="loadStuffHere">
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <div hidden="true" class="navbar-brand" id="time-div">Time: 00:00:0</div>
+	          <div hidden="true" class="navbar-brand" id="score-div">Score: 0</div>
+	        </div>
+	        <div class="navbar-collapse collapse">
+	          <form class="navbar-form navbar-right" role="form">
+	            <div class="form-group">
+	            	<button type="button" onclick="MazeGame._5()" class="btn btn-primary">5x5</button>
+	            </div>
+	            <div class="form-group">
+	            	<button type="button" onclick="MazeGame._10()" class="btn btn-primary">10x10</button>
+	            </div>
+	            <div class="form-group">
+	            	<button type="button" onclick="MazeGame._15()" class="btn btn-primary">15x15</button>
+	            </div>
+	            <div class="form-group">
+	            	<button type="button" onclick="MazeGame._20()" class="btn btn-primary">20x20</button>
+	            </div>
+	            <div class="form-group">
+	              <input type="number" id="widthInput" placeholder="Size" class="form-control">
+	            </div>
+	            <div class="form-group">
+	            	<button type="button" onclick="MazeGame.animateInit()" class="btn btn-primary">Animate Start</button>
+	            </div>
+	            <div class="form-group">
+	            	<button type="button" onclick="MazeGame.init()" class="btn btn-primary">Start</button>
+	            </div>
+	            <div class="form-group">
+	            	<a class="btn btn-primary" href="#highscore-modal" data-toggle="modal">High Score</a>
+	            </div>
+	            <div class="form-group">
+	            	<a class="btn btn-primary" href="#credits-modal" data-toggle="modal">Credits</a>
+	            </div>
+	          </form>
+	        </div><!--/.navbar-collapse -->
+	      </div>
+	    </div><br><br><br><br>
+	    <div>
+		    <div align="center">
+				<canvas id="myCanvas" width="500" height="500" style="width: 100%; max-width:500px; height:auto;border:1px solid;"></canvas>
+			</div>
+			<img hidden="true" id="player" src="assets/player.png" width="500" height="500">
+			<img hidden="true" id="where" src="assets/where.png" width="500" height="500">
+			<img hidden="true" id="trail" src="assets/trail.png" width="500" height="500">
+			<img hidden="true" id="hint" src="assets/hint.png" width="500" height="500">
+			<img hidden="true" id="finish" src="assets/finish.png" width="500" height="500">
+		</div>
+		<div id="credits-modal" class="modal fade">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title">Credits</h4>
+		      </div>  
+		        <div class="modal-body">
+		          This simple maze game was developed by Tyson Lindhardt using Javascript, Jquery and Bootstrap. The maze was generated with a Randomized Kruskal's Algorithm and then solved so I can count score. The score is 5 points per correct space, -1 point for moving to the adjacent path and -2 points for moving anywhere else. The maze will accept any number and generate a maze from 4x4 - 100x100. There are several hot keys in the game, you can toggle breadcrumbs with b, shortest path with p, score with y and hint with h.
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" id="close-btn" class="btn btn-danger" data-dismiss="modal">Close</button>
+		        </div>
+		    </div>
+		  </div>
+		</div>
+
+		<div id="highscore-modal" class="modal fade">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		        <h4 class="modal-title">High Scores</h4>
+		      </div>  
+		        <div class="modal-body" id="modalscore-div">
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" id="close-btn" class="btn btn-danger" data-dismiss="modal">Close</button>
+		        </div>
+		    </div>
+		  </div>
+		</div>
+		<p id="countdown"></p>
+	</div>
+</body>
+</html>

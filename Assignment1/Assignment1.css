@@ -1,0 +1,71 @@
+#container{
+	width: 50%;
+	height: 400px;
+	margin: 0 auto;
+	border: solid;
+}
+
+#header{
+	height: calc(20% - 3px);
+	border-bottom:solid;
+	background-color: DeepSkyBlue;
+	font-size: 50px;
+}
+
+#footer{
+	height: calc(20% - 3px);
+	border-top: solid;
+	background-color: DeepSkyBlue;
+	font-size: 30px;
+} 
+
+#body{
+	height: 60%;
+}
+
+#leftDiv{
+	width: calc(60% - 3px);
+	float: left;
+	border-right: solid;
+	height: 100%;
+}
+
+#rightDiv{
+	width: 40%;
+	float: right;
+	font-size: 20px;
+}
+
+#textArea{
+	height: calc(100% - 6px);
+	max-height: calc(100% - 6px);
+	width: calc(100% - 6px);
+	max-width: calc(100% - 6px);
+	resize:none;
+}
+
+#leftText{
+	width:40%;
+	float: left;
+}
+
+#rightText{
+	width: 55%;
+	float: right;
+}
+
+#inputDiv{
+	height: 40px;
+}
+
+#numberTimesInput{
+	width: 90%;
+}
+
+#nameInput{
+	width: 90%;
+}
+
+#intervalInput{
+	width: 90%;
+}

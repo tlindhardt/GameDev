@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang = "en-US">
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>Coin Game</title>
+ 	<link href="styles/bootstrap.min.css" rel="stylesheet">
+ 	<link href="styles/menu.css" rel="stylesheet">
+ 	<link href="styles/game.css" rel="stylesheet">
+
+	<script src = "scripts/modernizr.js"></script>
+	<script src = "scripts/loader.js"></script>
+</head>
+<body>
+	<div id = "game">
+		<div id = "main-menu" class = "screen">
+			<form class="menu">
+				<h2 class="menu-heading">Coin Game</h2><br>
+				<div class="form-group">
+					<a class="btn btn-lg btn-primary btn-block" id = "id-new-game">New Game</a>
+				</div>
+				<div class="form-group">
+					<a class="btn btn-lg btn-primary btn-block" id = "id-high-scores">High Scores</a>
+				</div>
+				<div class="form-group">
+					<a class="btn btn-lg btn-primary btn-block" id = "id-help">Help</a>
+				</div>
+				<div class="form-group">
+					<a class="btn btn-lg btn-primary btn-block" id = "id-about">About</a>
+				</div>
+			</form>
+		</div>
+		<div id="game-play" class="screen">
+			<canvas id = "canvas-main"></canvas>
+			<div id="game-score">
+				<img id="pig" src="images/Piggy-Bank.png" width="150" height="150">
+				<div id="scores" align="center">
+					<h1 id="overallscore">0</h1>
+				</div>
+			</div>
+			<div>
+				<h1 id="countdown"></h1>
+			</div>
+		</div>
+		<div id = "high-scores" class = "screen menu-heading">
+			<h1 class="menu-heading">High Scores</h1>
+			<div class="menu-heading">
+				<h2 class="menu-heading">Level 1</h2>
+				<div id="level-1"></div>
+			</div>
+			<div class="menu-heading">
+				<h2 class="menu-heading">Level 2</h2>
+				<div id="level-2"></div>
+			</div>
+			<div class="menu-heading">
+				<h2 class="menu-heading">Level 3</h2>
+				<div id="level-3"></div>
+			</div>
+			<div class="menu-heading">
+				<h2 class="menu-heading">Overall</h2>
+				<div id="overall"></div>
+			</div>
+			<form class="menu">
+				<div class="form-group">
+					<a class="btn btn-lg btn-primary btn-block" id = "id-high-scores-back">Back</a>
+				</div>
+			</form>
+		</div>
+		<div id = "help" class = "screen">
+			<h2 class="menu-heading">Help</h2><br>
+			<p class="menu-heading">The basic gameplay is that of coins dropping from random locations across the top of the screen and moving down to the bottom. Players click (or tap) US and Roman coins to earn money, click the clock to gain additional coins, but if a Canadian coin is clicked, their current score is reset to 0. Each time a coin is clicked, a small and tasteful shower of $ particles takes place at that coin location, with the player score increasing by the coin amount. This is a fast paced game, the coins drop fairly quickly.
+			To Leave the game press the "ESC" key.</p>
+			<form class="menu">
+				<div class="form-group">
+					<a class="btn btn-lg btn-primary btn-block" id = "id-help-back">Back</a>
+				</div>
+			</form>
+		</div>
+		<div id = "about" class = "screen">
+			<h2 class="menu-heading">About</h2><br>
+			<p class="menu-heading">Developed by</p>
+			<p class="menu-heading">Tyson Lindhardt</p>
+			<form class="menu">
+				<div class="form-group">
+					<a class="btn btn-lg btn-primary btn-block" id = "id-about-back">Back</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="loganCoachApp">
+<head>
+  <title>Assignment1</title>
+  <!-- CSS -->
+  <link href="Assignment1.css" rel="stylesheet">
+  <!-- JS -->
+  <script src="jquery.js"></script>
+  <script src="Assignment1.js"></script>
+</head>
+<body onload="Game1.init()">
+	 <div id="mainDiv">
+		<div id="container" align="center">
+		  	<div id="header">
+		  		<div>Browser Game Loop</div>
+		  	</div>
+		  	<div id="body">
+		  		<div id="leftDiv">
+		  			<textarea disabled id="textArea"></textarea>
+		  		</div>
+		  		<div id="rightDiv">
+		  			<div id="inputDiv">
+		  				<div id="leftText">Name:</div>
+		  				<div id="rightText">
+		  					<input id="nameInput"></input>
+		  				</div>
+		  			</div>
+		  			<div id="inputDiv">
+		  				<div id="leftText">Interval:</div>
+		  				<div id="rightText">
+		  					<input id="intervalInput"></input>
+		  				</div>
+		  			</div>
+		  			<div id="inputDiv">
+		  				<div id="leftText"># Times:</div>
+		  				<div id="rightText">
+		  					<input id="numberTimesInput"></input>
+		  				</div>
+		  			</div>
+		  			<div id="inputDiv">
+		  				<button id="addTimerButton" onclick="Game1.addTimer();">Add Timer</button>
+		  			</div>
+		  		</div>
+		  	</div>
+		  	<div id="footer">
+		  		<div>Created for CS 5410</div>
+		  	</div>
+		 </div>
+	</div>
+</body>
+</html>
