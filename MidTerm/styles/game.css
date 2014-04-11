@@ -1,0 +1,52 @@
+#currentScore{
+	position: fixed;
+	top:100px;
+	right:20px;
+	color: black;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#game .screen{
+	display: none;
+}
+
+#overallscore{
+	color: black;
+}
+#overalllevel{
+	color: black;
+}
+
+#game .screen.active{
+	display: block;
+}
+
+#game-play{
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+}
+
+#game-score{
+	overflow: hidden;
+	top:0px;
+	position: absolute;
+}
+
+#scores{
+	color: black;
+}
+
+#countdown{
+	font-size: 100px;
+	color: black;
+	width:600px;
+	height:100px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-50px 0 0 -300px;
+}
