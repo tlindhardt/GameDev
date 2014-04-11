@@ -10,6 +10,7 @@ MYGAME.screens['game-play'] = (function() {
 		myTouch = MYGAME.input.Touch(),
 		particle = null,
 		Coins = null,
+		myVar = null,
 		cancelNextRequest = false;
 	
 	function initialize() {
@@ -37,6 +38,22 @@ MYGAME.screens['game-play'] = (function() {
 			// Then, return to the main menu
 			MYGAME.game.showScreen('main-menu');
 		});
+
+		$('#pig').on('click touchstart', function(){
+			//
+			// Stop the game loop by canceling the request for the next animation frame
+			if(myVar)
+				clearInterval(myVar);
+			cancelNextRequest = true;
+			$('#countdown').text("");
+			$('#overallscore').text("");
+			MYGAME.currentLevel = 1;
+			MYGAME.graphics.clear();
+			MYGAME.storage.add(MYGAME.data.overall, MYGAME.overallScore);
+			MYGAME.overallScore = 0;
+			// Then, return to the main menu
+			MYGAME.game.showScreen('main-menu');
+		});
 	}
 	
 	function gameLoop(time) {
@@ -47,6 +64,7 @@ MYGAME.screens['game-play'] = (function() {
 		myKeyboard.update(MYGAME.elapsedTime);
 		myMouse.update(MYGAME.elapsedTime);
 		myAutomatic.update(MYGAME.elapsedTime);
+		myTouch.update(MYGAME.elapsedTime);
 
 		if(MYGAME.currentLevel > 0 && MYGAME.currentLevel < 4){
 			MYGAME.graphics.clear();
@@ -79,7 +97,7 @@ MYGAME.screens['game-play'] = (function() {
 	}
 	
 	function timer(){
-		var myVar=setInterval(function(){
+		myVar=setInterval(function(){
 			if(MYGAME.timeout > 0)
 				$('#countdown').text(MYGAME.timeout);
 			else

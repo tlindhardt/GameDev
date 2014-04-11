@@ -167,7 +167,7 @@ MYGAME.input = (function() {
 			    handler;
 			for (event = 0; event < that.touchstarts.length; event++) {
 				for (handler = 0; handler < that.touchstartshandler.length; handler++) {
-					that.touchstartshandler[handler](that.touchstarts[event], elapsedTime);
+					that.touchstartshandler[handler].handler(that.touchstarts[event]);
 				}
 			}
 			that.touchstarts.length = 0;

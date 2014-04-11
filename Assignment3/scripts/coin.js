@@ -95,8 +95,10 @@ MYGAME.Coin = function(usCoin, romanCoin, canadianCoin, clocks, speed, myAutomat
 						MYGAME.currentScore += 10;
 						MYGAME.overallScore += 10;
 					}
-					else if(coinArray[i].type === "canadian")
+					else if(coinArray[i].type === "canadian"){
+						MYGAME.overallScore -= MYGAME.currentScore;
 						MYGAME.currentScore = 0;
+					}
 					else if(coinArray[i].type === "roman"){
 						MYGAME.currentScore += 50;
 						MYGAME.overallScore += 50;
